@@ -16,14 +16,13 @@ const colorSets = [
 		"--accent-color-2": "#f7768e",
 		"--background-color": "#1a1b26",
 	},
-{
-	"--text-color": "#9c9c9c",       // Red Bull deep navy
-	"--hover-color": "#012f5e",      // Red Bull vibrant red
-	"--accent-color": "#ffcc00",     // Red Bull bright yellow
-	"--accent-color-2": "#ff1e00",   // Metallic gray (suit/helmet)
-	"--background-color": "#111314"  // Warm dark charcoal
-},
-
+	{
+		"--text-color": "#9c9c9c",       
+		"--hover-color": "#012f5e",     
+		"--accent-color": "#ffcc00",     
+		"--accent-color-2": "#ff1e00",  
+		"--background-color": "#111314"  
+	},
 	{
 		"--text-color": "#c0caf5",
 		"--hover-color": "#e0af68",
@@ -38,7 +37,6 @@ const colorSets = [
 		"--accent-color-2": "#ffd72a",
 		"--background-color": "#21211e"
 	},
-
 	{
 		"--text-color": "#f6f4f0",
 		"--hover-color": "#ff9f43",
