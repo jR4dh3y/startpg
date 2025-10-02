@@ -36,7 +36,7 @@ const colorSets = [
 		"--accent-color": "#2c6d83",
 		"--accent-color-2": "#d5cfd2",
 		"--background-color": "#101419"
-	}
+	},
 	{
 		"--text-color": "#f6f4f0",
 		"--hover-color": "#ff9f43",
