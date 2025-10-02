@@ -34,14 +34,14 @@ body {
   align-items: center;
 }
  
-/* #text {
+#text {
 	transform: translateX(100vw);
 	transition: transform 0.5s ease-in-out;
 }
 
 #text.loaded {
   transform: translateX(0vw);
-}  */
+}  
 
 #carouselImage {
   height: 550px;

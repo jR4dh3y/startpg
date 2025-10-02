@@ -1,7 +1,13 @@
 let currentIndex = localStorage.getItem("currentIndex") || document.currentScript.getAttribute('currentIndex');
 currentIndex = parseInt(currentIndex);
 
-const images = ["cover1.webp", "cover2.webp", "cover3.webp"];
+const images = ["cover1.webp", "cover2.webp", "cover3.webp", "cover4.jpg", "cover5.png" ];
+
+if (!Number.isInteger(currentIndex) || currentIndex < 0) {
+	currentIndex = 0;
+} else {
+	currentIndex = currentIndex % images.length;
+}
 const colorSets = [
 	{
 		"--text-color": "#c0caf5",
@@ -24,6 +30,20 @@ const colorSets = [
 		"--accent-color-2": "#bb9af7",
 		"--background-color": "#1a1b26",
 	},
+	{
+		"--text-color": "#a7b4c7",
+		"--hover-color": "#c28c6d",
+		"--accent-color": "#2c6d83",
+		"--accent-color-2": "#d5cfd2",
+		"--background-color": "#101419"
+	}
+	{
+		"--text-color": "#f6f4f0",
+		"--hover-color": "#ff9f43",
+		"--accent-color": "#ff6b6b",
+		"--accent-color-2": "#ffd166",
+		"--background-color": "#1f2233",
+	},
 ];
 
 function preloadImages() {
@@ -33,12 +53,15 @@ function preloadImages() {
 	}
 }
 
-function nextImage() {
-	currentIndex = (currentIndex + 1) % images.length;
-	localStorage.setItem("currentIndex", currentIndex); // Update currentIndex in localStorage
+function updateIndexAndPersist(nextIndex) {
+	currentIndex = (nextIndex + images.length) % images.length;
+	localStorage.setItem("currentIndex", currentIndex);
+}
+
+function swapImage() {
 	const imageElement = document.getElementById("carouselImage");
 	imageElement.style.opacity = 0;
-	updateColors(currentIndex);
+	updateColors();
 
 	setTimeout(() => {
 		imageElement.src = "https://raw.githubusercontent.com/jR4dh3y/startpg/main/src/images/" + images[currentIndex];
@@ -46,16 +69,28 @@ function nextImage() {
 	}, 200); // Match the transition duration in style.css
 }
 
+function nextImage() {
+	updateIndexAndPersist(currentIndex + 1);
+	swapImage();
+}
+
+function previousImage() {
+	updateIndexAndPersist(currentIndex - 1);
+	swapImage();
+}
+
 function updateColors() {
 	const colorSet = colorSets[currentIndex];
-	// Iterate through the colorSet and set the CSS variables
+	if (!colorSet) {
+		return;
+	}
 	for (const [property, value] of Object.entries(colorSet)) {
 		document.documentElement.style.setProperty(property, value);
 	}
 }
 
 // Set colors with current index first
-updateColors(currentIndex);
+updateColors();
 
 // Set the initial image
 document.getElementById("carouselImage").src = "https://raw.githubusercontent.com/jR4dh3y/startpg/main/src/images/" + images[currentIndex];
@@ -68,3 +103,27 @@ window.onload = function() {
 	// Preload the remaining images
 	preloadImages();
 };
+
+document.addEventListener("keydown", (event) => {
+	if (event.defaultPrevented) {
+		return;
+	}
+
+	const target = event.target;
+	if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) {
+		return;
+	}
+
+	switch (event.key) {
+		case "ArrowRight":
+			nextImage();
+			event.preventDefault();
+			break;
+		case "ArrowLeft":
+			previousImage();
+			event.preventDefault();
+			break;
+		default:
+			break;
+	}
+});
