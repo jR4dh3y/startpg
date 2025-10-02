@@ -31,12 +31,13 @@ const colorSets = [
 		"--background-color": "#1a1b26",
 	},
 	{
-		"--text-color": "#a7b4c7",
-		"--hover-color": "#c28c6d",
-		"--accent-color": "#2c6d83",
-		"--accent-color-2": "#d5cfd2",
-		"--background-color": "#101419"
+		"--text-color": "#dfe6ff",
+		"--hover-color": "#9ee8cf",
+		"--accent-color": "#caa8ff",
+		"--accent-color-2": "#ffd72a",
+		"--background-color": "#21211e"
 	},
+
 	{
 		"--text-color": "#f6f4f0",
 		"--hover-color": "#ff9f43",

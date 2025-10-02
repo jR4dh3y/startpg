@@ -1,5 +1,5 @@
 (function () {
-	const AUTOPLAY_INTERVAL_MS = 3000;
+	const AUTOPLAY_INTERVAL_MS = 4000;
 	let autoplayTimerId = null;
 	let isPointerInsideCarousel = false;
 	let isManuallyPaused = false;
