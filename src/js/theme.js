@@ -16,13 +16,14 @@ const colorSets = [
 		"--accent-color-2": "#f7768e",
 		"--background-color": "#1a1b26",
 	},
-	{
-		"--text-color": "#9fadc6",
-		"--hover-color": "#9B5856",
-		"--accent-color": "#28725A",
-		"--accent-color-2": "#D2C7CB",
-		"--background-color": "#15191d",
-	},
+{
+	"--text-color": "#9c9c9c",       // Red Bull deep navy
+	"--hover-color": "#012f5e",      // Red Bull vibrant red
+	"--accent-color": "#ffcc00",     // Red Bull bright yellow
+	"--accent-color-2": "#ff1e00",   // Metallic gray (suit/helmet)
+	"--background-color": "#111314"  // Warm dark charcoal
+},
+
 	{
 		"--text-color": "#c0caf5",
 		"--hover-color": "#e0af68",
