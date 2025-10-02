@@ -1,7 +1,7 @@
 let currentIndex = localStorage.getItem("currentIndex") || document.currentScript.getAttribute('currentIndex');
 currentIndex = parseInt(currentIndex);
 
-const images = ["cover1.webp", "cover2.webp", "cover3.webp", "cover4.jpg", "cover5.png" ];
+const images = ["cover1.webp", "cover2.png", "cover3.webp", "cover4.jpg", "cover5.png" ];
 
 if (!Number.isInteger(currentIndex) || currentIndex < 0) {
 	currentIndex = 0;
