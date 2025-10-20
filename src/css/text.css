@@ -1,0 +1,29 @@
+/* Text Content Styles */
+
+#text {
+  transform: translateX(100vw);
+  transition: transform 0.5s ease-in-out;
+}
+
+#text.loaded {
+  transform: translateX(0vw);
+}
+
+#greeting {
+  color: var(--accent-color-2);
+  font-size: 2.5em;
+  font-weight: 900;
+  grid-column: 1/-1;
+  text-align: center;
+  display: grid;
+}
+
+#date {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--accent-color);
+  display: grid;
+  grid-column: 1/-1;
+  text-align: center;
+  margin: 1em 0;
+}

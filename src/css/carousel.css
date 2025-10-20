@@ -1,0 +1,30 @@
+/* Carousel Image Styles */
+
+#carouselImage {
+  height: 625px;
+  aspect-ratio: 9 / 16;
+  border-radius: 6px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  margin-right: 2em;
+}
+
+#carouselImage:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+#image {
+	opacity: 0;
+	transition: opacity 0.5s linear;
+}
+
+#image.loaded {
+	opacity: 1;
+}
+
+@media (max-width: 800px) {
+  img {
+    display: none;
+  }
+}

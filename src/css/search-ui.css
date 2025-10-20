@@ -1,0 +1,52 @@
+/* Fuzzy Search UI and Highlighting Styles */
+
+/* UI Elements */
+#search-overlay {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+#search-display {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Link Highlighting */
+a.search-highlight {
+  opacity: 1 !important;
+  color: var(--hover-color) !important;
+  font-weight: bold;
+}
+
+a.search-highlight:hover {
+  color: var(--hover-color) !important;
+}
+
+a.search-selected {
+  color: var(--accent-color-2) !important;
+  border-bottom: 2px solid var(--accent-color-2);
+  padding-bottom: 2px;
+}
+
+a.search-dimmed {
+  opacity: 0.50;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}

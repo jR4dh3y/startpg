@@ -1,0 +1,35 @@
+/* Base Styles and Global Configuration */
+
+@font-face {
+  font-family: "SpaceMono Nerd Font";
+  font-display: swap;
+  src:
+    local("SpaceMono Nerd Font"),
+	url(../fonts/SpaceMonoNF.woff2) format("woff2"),
+    url(../fonts/SpaceMonoNF.woff) format("woff");
+}
+
+:root {
+	color-scheme: dark;
+}
+
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+  background: var(--background-color);
+  overflow-x: clip;
+}
+
+body {
+  display: flex;
+  color: var(--text-color);
+  font-family: SpaceMono Nerd Font, monospace;
+  justify-content: center;
+  align-items: center;
+}
